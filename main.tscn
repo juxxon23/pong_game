@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyxvi2hboyfwl"]
+
+[ext_resource type="PackedScene" uid="uid://dekj8oir8kslh" path="res://scenes/table.tscn" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://ba8n1a8v6kivu" path="res://scenes/paddle.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dnl37j54liisp" path="res://scenes/ball.tscn" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://dj66e8ecx887o" path="res://scenes/hud.tscn" id="4_272bh"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Table" parent="." instance=ExtResource("1_1bvp3")]
+
+[node name="LeftPaddle" parent="." instance=ExtResource("2_lquwl")]
+
+[node name="RightPaddle" parent="." instance=ExtResource("2_lquwl")]
+side = 1
+
+[node name="Ball" parent="." instance=ExtResource("3_7mycd")]
+
+[node name="HUD" parent="." instance=ExtResource("4_272bh")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 641.0
+offset_right = 641.0
+grow_horizontal = 1
+grow_vertical = 1

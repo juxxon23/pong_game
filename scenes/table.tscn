@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dekj8oir8kslh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu86w"]
+size = Vector2(1280, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02ppr"]
+size = Vector2(20, 720)
+
+[node name="Table" type="Node2D"]
+metadata/_edit_vertical_guides_ = [640.0]
+
+[node name="Background" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
+position = Vector2(640, 360)
+shape = SubResource("RectangleShape2D_gu86w")
+
+[node name="Separator" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Separator"]
+position = Vector2(640, 360)
+shape = SubResource("RectangleShape2D_02ppr")
