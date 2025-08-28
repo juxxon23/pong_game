@@ -10,14 +10,15 @@
 [node name="Table" parent="." instance=ExtResource("1_1bvp3")]
 
 [node name="LeftPaddle" parent="." instance=ExtResource("2_lquwl")]
-position = Vector2(42, 313)
+position = Vector2(50, 360)
+pd_side = -1
 
 [node name="RightPaddle" parent="." instance=ExtResource("2_lquwl")]
-position = Vector2(1239, 328)
-side = 1
+position = Vector2(1230, 360)
+pd_side = 1
 
 [node name="Ball" parent="." instance=ExtResource("3_7mycd")]
-position = Vector2(521, 306)
+position = Vector2(640, 360)
 
 [node name="HUD" parent="." instance=ExtResource("4_272bh")]
 offset_left = 640.0

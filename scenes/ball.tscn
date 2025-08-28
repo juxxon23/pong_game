@@ -4,15 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://0pcljj6ypkwp" path="res://assets/white_ball.png" id="2_cxlvu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f7cbr"]
-radius = 15.0
+radius = 12.0
 
-[node name="Ball" type="RigidBody2D"]
-freeze = true
-freeze_mode = 1
+[node name="Ball" type="CharacterBody2D" groups=["balls"]]
+motion_mode = 1
 script = ExtResource("1_7s4qf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 texture = ExtResource("2_cxlvu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

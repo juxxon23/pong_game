@@ -2,6 +2,7 @@ extends Control
 ## Displays player scores
 
 var scores = [0, 0]
+var opp_paddle : int = 0
 
 @onready var left_score = $LeftScore
 @onready var right_score = $RightScore 
@@ -13,14 +14,21 @@ func _ready() -> void:
 
 func add_score(paddle_side) -> void:
 	match paddle_side:
-		0 : 
+		-1 : 
 			scores[0] += 1
 			left_score.text = str(scores[0])
+			opp_paddle = 1
 		1 : 
 			scores[1] += 1
 			right_score.text = str(scores[1])
-		_ : return
+			opp_paddle = -1
+	
+	$Timer.start()
 
 
 func reset_scores() -> void:
 	scores = [0, 0]
+
+
+func _on_timer_timeout() -> void:
+	get_tree().call_group("balls", "spawn", opp_paddle)

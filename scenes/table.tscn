@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dekj8oir8kslh"]
+[gd_scene load_steps=8 format=3 uid="uid://dekj8oir8kslh"]
 
 [ext_resource type="Texture2D" uid="uid://8bfb70iafu5o" path="res://assets/textures/black_solid.png" id="1_02ppr"]
+[ext_resource type="Script" uid="uid://dv62iwwnlp7ok" path="res://src/table.gd" id="1_x8522"]
 [ext_resource type="Texture2D" uid="uid://b76ac3dfs4thv" path="res://assets/textures/white_solid.png" id="2_eotx8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gu86w"]
@@ -13,9 +14,10 @@ size = Vector2(20, 720)
 size = Vector2(1280, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8522"]
-size = Vector2(20, 680)
+size = Vector2(20, 720)
 
 [node name="Table" type="Node2D"]
+script = ExtResource("1_x8522")
 metadata/_edit_vertical_guides_ = [640.0]
 
 [node name="Background" type="Area2D" parent="."]
@@ -43,25 +45,28 @@ shape = SubResource("RectangleShape2D_02ppr")
 [node name="BorderTop" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderTop"]
-position = Vector2(640, 10)
+position = Vector2(640, -10)
 shape = SubResource("RectangleShape2D_eotx8")
 
 [node name="BorderBottom" type="StaticBody2D" parent="."]
 position = Vector2(0, 665)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderBottom"]
-position = Vector2(640, 45)
+position = Vector2(640, 65)
 shape = SubResource("RectangleShape2D_eotx8")
 
-[node name="BorderLeft" type="StaticBody2D" parent="."]
+[node name="BorderLeft" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
-position = Vector2(10, 360.25)
+position = Vector2(-10, 360)
 shape = SubResource("RectangleShape2D_x8522")
 
-[node name="BorderRight" type="StaticBody2D" parent="."]
+[node name="BorderRight" type="Area2D" parent="."]
 position = Vector2(1276, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight"]
-position = Vector2(-6, 360)
+position = Vector2(14, 360)
 shape = SubResource("RectangleShape2D_x8522")
+
+[connection signal="body_entered" from="BorderLeft" to="." method="_on_border_left_body_entered"]
+[connection signal="body_entered" from="BorderRight" to="." method="_on_border_right_body_entered"]

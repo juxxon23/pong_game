@@ -7,7 +7,7 @@ var direction : Vector2
 
 func movement_direction(side: int) -> void:
 	match side:
-		0 :	direction.y = Input.get_axis("ui2_up", "ui2_down")
+		-1 :	direction.y = Input.get_axis("ui2_up", "ui2_down")
 		1 : direction.y = Input.get_axis("ui_up", "ui_down")
 
 
