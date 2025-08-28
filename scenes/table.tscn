@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dekj8oir8kslh"]
+[gd_scene load_steps=7 format=3 uid="uid://dekj8oir8kslh"]
+
+[ext_resource type="Texture2D" uid="uid://8bfb70iafu5o" path="res://assets/textures/black_solid.png" id="1_02ppr"]
+[ext_resource type="Texture2D" uid="uid://b76ac3dfs4thv" path="res://assets/textures/white_solid.png" id="2_eotx8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gu86w"]
 size = Vector2(1280, 720)
@@ -6,10 +9,21 @@ size = Vector2(1280, 720)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02ppr"]
 size = Vector2(20, 720)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eotx8"]
+size = Vector2(1280, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8522"]
+size = Vector2(20, 680)
+
 [node name="Table" type="Node2D"]
 metadata/_edit_vertical_guides_ = [640.0]
 
 [node name="Background" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(640, 360)
+scale = Vector2(1280, 720)
+texture = ExtResource("1_02ppr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
 position = Vector2(640, 360)
@@ -17,6 +31,37 @@ shape = SubResource("RectangleShape2D_gu86w")
 
 [node name="Separator" type="Area2D" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="Separator"]
+position = Vector2(640, 360)
+scale = Vector2(19.9999, 720)
+texture = ExtResource("2_eotx8")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Separator"]
 position = Vector2(640, 360)
 shape = SubResource("RectangleShape2D_02ppr")
+
+[node name="BorderTop" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderTop"]
+position = Vector2(640, 10)
+shape = SubResource("RectangleShape2D_eotx8")
+
+[node name="BorderBottom" type="StaticBody2D" parent="."]
+position = Vector2(0, 665)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderBottom"]
+position = Vector2(640, 45)
+shape = SubResource("RectangleShape2D_eotx8")
+
+[node name="BorderLeft" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
+position = Vector2(10, 360.25)
+shape = SubResource("RectangleShape2D_x8522")
+
+[node name="BorderRight" type="StaticBody2D" parent="."]
+position = Vector2(1276, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight"]
+position = Vector2(-6, 360)
+shape = SubResource("RectangleShape2D_x8522")

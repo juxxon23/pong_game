@@ -13,24 +13,30 @@ script = ExtResource("1_ahhtf")
 
 [node name="LeftScore" type="RichTextLabel" parent="."]
 layout_mode = 1
-offset_left = 300.0
-offset_right = 340.0
-offset_bottom = 40.0
-text = "00"
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_right = -160.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 80
+text = "0"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RightScore" type="RichTextLabel" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -340.0
-offset_right = -300.0
-offset_bottom = 40.0
-grow_horizontal = 0
-text = "00"
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 160.0
+offset_right = 240.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 80
+text = "0"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
